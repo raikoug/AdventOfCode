@@ -1,0 +1,10 @@
+[package]
+name = "solutions"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+md5 = "0.7.0"
+rayon = "1.10.0"
+ndarray = "0.16.1"
+regex = "1.11.1"

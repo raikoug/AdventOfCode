@@ -1,0 +1,650 @@
+[
+    {
+        "Time": 62,
+        "Distance": 553,
+        "solutions": [
+            {
+                "press": 11,
+                "distance": 561
+            },
+            {
+                "press": 12,
+                "distance": 600
+            },
+            {
+                "press": 13,
+                "distance": 637
+            },
+            {
+                "press": 14,
+                "distance": 672
+            },
+            {
+                "press": 15,
+                "distance": 705
+            },
+            {
+                "press": 16,
+                "distance": 736
+            },
+            {
+                "press": 17,
+                "distance": 765
+            },
+            {
+                "press": 18,
+                "distance": 792
+            },
+            {
+                "press": 19,
+                "distance": 817
+            },
+            {
+                "press": 20,
+                "distance": 840
+            },
+            {
+                "press": 21,
+                "distance": 861
+            },
+            {
+                "press": 22,
+                "distance": 880
+            },
+            {
+                "press": 23,
+                "distance": 897
+            },
+            {
+                "press": 24,
+                "distance": 912
+            },
+            {
+                "press": 25,
+                "distance": 925
+            },
+            {
+                "press": 26,
+                "distance": 936
+            },
+            {
+                "press": 27,
+                "distance": 945
+            },
+            {
+                "press": 28,
+                "distance": 952
+            },
+            {
+                "press": 29,
+                "distance": 957
+            },
+            {
+                "press": 30,
+                "distance": 960
+            },
+            {
+                "press": 31,
+                "distance": 961
+            },
+            {
+                "press": 32,
+                "distance": 960
+            },
+            {
+                "press": 33,
+                "distance": 957
+            },
+            {
+                "press": 34,
+                "distance": 952
+            },
+            {
+                "press": 35,
+                "distance": 945
+            },
+            {
+                "press": 36,
+                "distance": 936
+            },
+            {
+                "press": 37,
+                "distance": 925
+            },
+            {
+                "press": 38,
+                "distance": 912
+            },
+            {
+                "press": 39,
+                "distance": 897
+            },
+            {
+                "press": 40,
+                "distance": 880
+            },
+            {
+                "press": 41,
+                "distance": 861
+            },
+            {
+                "press": 42,
+                "distance": 840
+            },
+            {
+                "press": 43,
+                "distance": 817
+            },
+            {
+                "press": 44,
+                "distance": 792
+            },
+            {
+                "press": 45,
+                "distance": 765
+            },
+            {
+                "press": 46,
+                "distance": 736
+            },
+            {
+                "press": 47,
+                "distance": 705
+            },
+            {
+                "press": 48,
+                "distance": 672
+            },
+            {
+                "press": 49,
+                "distance": 637
+            },
+            {
+                "press": 50,
+                "distance": 600
+            },
+            {
+                "press": 51,
+                "distance": 561
+            }
+        ]
+    },
+    {
+        "time": 64,
+        "distance": 1010,
+        "solutions": [
+            {
+                "press": 29,
+                "distance": 1015
+            },
+            {
+                "press": 30,
+                "distance": 1020
+            },
+            {
+                "press": 31,
+                "distance": 1023
+            },
+            {
+                "press": 32,
+                "distance": 1024
+            },
+            {
+                "press": 33,
+                "distance": 1023
+            },
+            {
+                "press": 34,
+                "distance": 1020
+            }
+        ]
+    },
+    {
+        "time": 91,
+        "distance": 1473,
+        "solutions": [
+            {
+                "press": 22,
+                "distance": 1518
+            },
+            {
+                "press": 23,
+                "distance": 1564
+            },
+            {
+                "press": 24,
+                "distance": 1608
+            },
+            {
+                "press": 25,
+                "distance": 1650
+            },
+            {
+                "press": 26,
+                "distance": 1690
+            },
+            {
+                "press": 27,
+                "distance": 1728
+            },
+            {
+                "press": 28,
+                "distance": 1764
+            },
+            {
+                "press": 29,
+                "distance": 1798
+            },
+            {
+                "press": 30,
+                "distance": 1830
+            },
+            {
+                "press": 31,
+                "distance": 1860
+            },
+            {
+                "press": 32,
+                "distance": 1888
+            },
+            {
+                "press": 33,
+                "distance": 1914
+            },
+            {
+                "press": 34,
+                "distance": 1938
+            },
+            {
+                "press": 35,
+                "distance": 1960
+            },
+            {
+                "press": 36,
+                "distance": 1980
+            },
+            {
+                "press": 37,
+                "distance": 1998
+            },
+            {
+                "press": 38,
+                "distance": 2014
+            },
+            {
+                "press": 39,
+                "distance": 2028
+            },
+            {
+                "press": 40,
+                "distance": 2040
+            },
+            {
+                "press": 41,
+                "distance": 2050
+            },
+            {
+                "press": 42,
+                "distance": 2058
+            },
+            {
+                "press": 43,
+                "distance": 2064
+            },
+            {
+                "press": 44,
+                "distance": 2068
+            },
+            {
+                "press": 45,
+                "distance": 2070
+            },
+            {
+                "press": 46,
+                "distance": 2070
+            },
+            {
+                "press": 47,
+                "distance": 2068
+            },
+            {
+                "press": 48,
+                "distance": 2064
+            },
+            {
+                "press": 49,
+                "distance": 2058
+            },
+            {
+                "press": 50,
+                "distance": 2050
+            },
+            {
+                "press": 51,
+                "distance": 2040
+            },
+            {
+                "press": 52,
+                "distance": 2028
+            },
+            {
+                "press": 53,
+                "distance": 2014
+            },
+            {
+                "press": 54,
+                "distance": 1998
+            },
+            {
+                "press": 55,
+                "distance": 1980
+            },
+            {
+                "press": 56,
+                "distance": 1960
+            },
+            {
+                "press": 57,
+                "distance": 1938
+            },
+            {
+                "press": 58,
+                "distance": 1914
+            },
+            {
+                "press": 59,
+                "distance": 1888
+            },
+            {
+                "press": 60,
+                "distance": 1860
+            },
+            {
+                "press": 61,
+                "distance": 1830
+            },
+            {
+                "press": 62,
+                "distance": 1798
+            },
+            {
+                "press": 63,
+                "distance": 1764
+            },
+            {
+                "press": 64,
+                "distance": 1728
+            },
+            {
+                "press": 65,
+                "distance": 1690
+            },
+            {
+                "press": 66,
+                "distance": 1650
+            },
+            {
+                "press": 67,
+                "distance": 1608
+            },
+            {
+                "press": 68,
+                "distance": 1564
+            },
+            {
+                "press": 69,
+                "distance": 1518
+            }
+        ]
+    },
+    {
+        "time": 90,
+        "distance": 1074,
+        "solutions": [
+            {
+                "press": 15,
+                "distance": 1125
+            },
+            {
+                "press": 16,
+                "distance": 1184
+            },
+            {
+                "press": 17,
+                "distance": 1241
+            },
+            {
+                "press": 18,
+                "distance": 1296
+            },
+            {
+                "press": 19,
+                "distance": 1349
+            },
+            {
+                "press": 20,
+                "distance": 1400
+            },
+            {
+                "press": 21,
+                "distance": 1449
+            },
+            {
+                "press": 22,
+                "distance": 1496
+            },
+            {
+                "press": 23,
+                "distance": 1541
+            },
+            {
+                "press": 24,
+                "distance": 1584
+            },
+            {
+                "press": 25,
+                "distance": 1625
+            },
+            {
+                "press": 26,
+                "distance": 1664
+            },
+            {
+                "press": 27,
+                "distance": 1701
+            },
+            {
+                "press": 28,
+                "distance": 1736
+            },
+            {
+                "press": 29,
+                "distance": 1769
+            },
+            {
+                "press": 30,
+                "distance": 1800
+            },
+            {
+                "press": 31,
+                "distance": 1829
+            },
+            {
+                "press": 32,
+                "distance": 1856
+            },
+            {
+                "press": 33,
+                "distance": 1881
+            },
+            {
+                "press": 34,
+                "distance": 1904
+            },
+            {
+                "press": 35,
+                "distance": 1925
+            },
+            {
+                "press": 36,
+                "distance": 1944
+            },
+            {
+                "press": 37,
+                "distance": 1961
+            },
+            {
+                "press": 38,
+                "distance": 1976
+            },
+            {
+                "press": 39,
+                "distance": 1989
+            },
+            {
+                "press": 40,
+                "distance": 2000
+            },
+            {
+                "press": 41,
+                "distance": 2009
+            },
+            {
+                "press": 42,
+                "distance": 2016
+            },
+            {
+                "press": 43,
+                "distance": 2021
+            },
+            {
+                "press": 44,
+                "distance": 2024
+            },
+            {
+                "press": 45,
+                "distance": 2025
+            },
+            {
+                "press": 46,
+                "distance": 2024
+            },
+            {
+                "press": 47,
+                "distance": 2021
+            },
+            {
+                "press": 48,
+                "distance": 2016
+            },
+            {
+                "press": 49,
+                "distance": 2009
+            },
+            {
+                "press": 50,
+                "distance": 2000
+            },
+            {
+                "press": 51,
+                "distance": 1989
+            },
+            {
+                "press": 52,
+                "distance": 1976
+            },
+            {
+                "press": 53,
+                "distance": 1961
+            },
+            {
+                "press": 54,
+                "distance": 1944
+            },
+            {
+                "press": 55,
+                "distance": 1925
+            },
+            {
+                "press": 56,
+                "distance": 1904
+            },
+            {
+                "press": 57,
+                "distance": 1881
+            },
+            {
+                "press": 58,
+                "distance": 1856
+            },
+            {
+                "press": 59,
+                "distance": 1829
+            },
+            {
+                "press": 60,
+                "distance": 1800
+            },
+            {
+                "press": 61,
+                "distance": 1769
+            },
+            {
+                "press": 62,
+                "distance": 1736
+            },
+            {
+                "press": 63,
+                "distance": 1701
+            },
+            {
+                "press": 64,
+                "distance": 1664
+            },
+            {
+                "press": 65,
+                "distance": 1625
+            },
+            {
+                "press": 66,
+                "distance": 1584
+            },
+            {
+                "press": 67,
+                "distance": 1541
+            },
+            {
+                "press": 68,
+                "distance": 1496
+            },
+            {
+                "press": 69,
+                "distance": 1449
+            },
+            {
+                "press": 70,
+                "distance": 1400
+            },
+            {
+                "press": 71,
+                "distance": 1349
+            },
+            {
+                "press": 72,
+                "distance": 1296
+            },
+            {
+                "press": 73,
+                "distance": 1241
+            },
+            {
+                "press": 74,
+                "distance": 1184
+            },
+            {
+                "press": 75,
+                "distance": 1125
+            }
+        ]
+    }
+]

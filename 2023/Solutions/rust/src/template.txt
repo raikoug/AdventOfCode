@@ -1,0 +1,17 @@
+
+pub fn part_1(input: Vec<String>) -> u32 {
+    1
+}
+pub fn part_2(input: Vec<String>) -> u32 {
+    2
+}
+
+
+pub fn solve(input: Vec<String>) {
+    // PART 1
+    println!("part 1: {}", part_1(input.clone()));
+
+    // PART 2
+    println!("part 2: {}", part_2(input));
+
+}
