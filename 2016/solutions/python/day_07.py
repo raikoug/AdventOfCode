@@ -6,7 +6,8 @@ CURRENT_DAY = int(Path(__file__).stem.replace('day_',''))
 aoc = AOC(CURRENT_YEAR)
 
 regex = r'(\w)(\w)\2\1'
-regex2 = r'(\w)(\w)\1'
+regex2 = r'(?=((\w)(\w))\2)'
+#regex2 = r'(\w)(\w)\1'
 
 def abba_in_str(piece: str) -> bool:
     for el in findall(regex, piece):
@@ -50,13 +51,25 @@ def check(line: str)-> bool:
     return True
 
 def aba_in_str(piece: str) -> bool:
+    coppie = list()
     for el in findall(regex2, piece):
-        coppie = set()
-        if el[0] != el[1]:
-            coppie.add(el)
-
-    if len(coppie) == 0: return coppie
+        # print("aba_in_str", piece, findall(regex2, piece))
+        if el[1] != el[2]:
+            tmp_coppia = [el[1],el[2]]
+            if tmp_coppia not in coppie: coppie.append(tmp_coppia)
+    
+    if coppie: 
+        return coppie
+    
     else: return False
+
+def coppia_in_str(coppie: list, piece: str) -> bool:
+    for coppia in coppie:
+        ricerca = f"{coppia[1]}{coppia[0]}{coppia[1]}"
+        if ricerca in piece:
+             return True
+    
+    return False
     
 def check2(line: str)-> bool:
     good = list()
@@ -79,19 +92,27 @@ def check2(line: str)-> bool:
     #print(good, nook)
     
     can_go = False
+    coppie = list()
     for piece in good:
-        if abba_in_str(piece):
+        tmp_coppie = aba_in_str(piece)
+        if tmp_coppie:
             can_go = True
+            for coppia in tmp_coppie:
+                if coppia not in coppie:
+                    coppie.append(coppia)
+    # print("check2",coppie)
 
     if not can_go:
         return False
 
+    # ora devo controllare che almeno in un pezzo bad ci sia almeno una delle coppie trovate
     for piece in nook:
-        if abba_in_str(piece):
-            return False
+        res = coppia_in_str(coppie,piece)
+        # print("check nook", line, coppie, piece, res)
+        if res:
+            return True
     
-    
-    return True
+    return False
 
 
 def solve_1(test_string = None) -> int:
@@ -104,8 +125,12 @@ def solve_1(test_string = None) -> int:
     
 def solve_2(test_string = None) -> int:
     inputs_1 = aoc.get_input(CURRENT_DAY, 1) if not test_string else test_string
-        
-    return 1
+    aba_ips = list()
+    for line in inputs_1.splitlines():
+        if check2(line): 
+            aba_ips.append(line)
+    
+    return aba_ips
 
 
 if __name__ == "__main__":
@@ -114,5 +139,11 @@ abcd[bddb]xyyx
 aaaa[qwer]tyui
 ioxxoj[asdfgh]zxcvbn
 """
+    test2 = """aba[bab]xyz
+xyx[xyx]xyx
+aaa[kek]eke
+zazbz[bzb]cdb
+aaa[bbb]ccc
+"""
     print(f"Part 1: {len(solve_1())}")
-    print(f"Part 2: {solve_2()}")
+    print(f"Part 2: {len(solve_2())}")
