@@ -34,7 +34,7 @@ create_files() {
         echo "Errore: 'dirname' non può essere vuoto."
         exit 1
     fi
-    touch "$dirname/instructions.md"
+    #touch "$dirname/instructions.md"
     last_day=$(get_last_day)
     filename="day_$(printf "%02d" $last_day)"
 
