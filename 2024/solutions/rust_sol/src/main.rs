@@ -12,8 +12,9 @@ fn main() {
     let input = utils::read_input(day);
     
     match day {
+        0 => days::day_00::start(&input),
         1 => days::day_01::start(&input),
-        //(2, 1) => days::day_02::part_1(&input),
+        2 => days::day_02::start(&input),
         //(2, 2) => days::day_02::part_2(&input),
         //(3, 1) => days::day_03::part_1(&input),
         //(3, 2) => days::day_03::part_2(&input),
