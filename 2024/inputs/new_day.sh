@@ -38,11 +38,11 @@ create_files() {
     last_day=$(get_last_day)
     filename="day_$(printf "%02d" $last_day)"
 
-    cd /home/raikoug/SyncThing/SharedCodeTest/adventOfCode/2016/solutions/python
+    cd /home/raikoug/SyncThing/SharedCodeTest/adventOfCode/2024/solutions/python
     cp day_00.py "$filename.py"
 }
 
-cd /home/raikoug/SyncThing/SharedCodeTest/adventOfCode/2016/inputs/ || {
+cd /home/raikoug/SyncThing/SharedCodeTest/adventOfCode/2024/inputs/ || {
     echo "Errore: Impossibile cambiare directory."
     exit 1
 }
