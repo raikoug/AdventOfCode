@@ -1,5 +1,5 @@
 # Repo for AdventOfCode solutions
-Needed to remove it all and put it back in a more organized way.
+Needed to remove it all and put it back in a more organized way. 
 
 ## Year 2015
 - Completed in Python
@@ -29,7 +29,7 @@ Needed to remove it all and put it back in a more organized way.
 - Completed in Python
 
 ## year 2024
-- WiP - Day 2
+- WiP - Day 5
 
 # Thanks!
 ## To the creator
