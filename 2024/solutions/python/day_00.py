@@ -1,5 +1,7 @@
 from starter import AOC, CURRENT_YEAR
 from pathlib import Path
+from typing import List, Optional
+from dataclasses import dataclass, field
 
 CURRENT_DAY = int(Path(__file__).stem.replace('day_',''))
 aoc = AOC(CURRENT_YEAR)
