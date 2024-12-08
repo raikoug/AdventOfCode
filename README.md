@@ -29,12 +29,12 @@ Needed to remove it all and put it back in a more organized way.
 - Completed in Python
 
 ## year 2024
-- WiP - Day 5
+- WiP - Day 8
 
 # Thanks!
 ## To the creator
 Eric Wastl, [GitHub](https://github.com/topaz), [WebSite](http://was.tl/), [Twitter](https://x.com/ericwastl)  
-Thanks for all yoour effort :D
+Thanks for all your effort :D
 
 ## To this repos
 - https://github.com/wimglenn/advent-of-code-data
