@@ -44,7 +44,7 @@ def solve_1(test_string = None, new_A: int = 0) -> str:
     out: List[int] = list()
     
     def parse_instr():
-        #after parsing instruction and manipulating the register, change the i to the next one
+        # Dopo aver analizzato l'istruzione e manipolato il registro, cambia 'i' alla successiva
         nonlocal i
         nonlocal R
         nonlocal out
@@ -63,7 +63,7 @@ def solve_1(test_string = None, new_A: int = 0) -> str:
             raise ValueError
             
         
-        match I[i]: #opcode
+        match I[i]: # opcode
             case 0:#ADV
                 R["A"] = R["A"] // (2 ** get_operand(I[i+1]))
             case 1: #BXL
@@ -96,7 +96,7 @@ def solve_2(test_string = None) -> int:
     inputs_1 = aoc.get_input(CURRENT_DAY, 1) if not test_string else test_string
     
     def add_i_in_pos(base,i,pos):
-        # pos goes from 15 to 0
+        # 'pos' va da 15 a 0
         #    <------------------
         #    15                0
         list_oct = list(f"{base:o}".zfill(16))
@@ -119,17 +119,17 @@ def solve_2(test_string = None) -> int:
     
     # Definizione della struttura di visualizzazione
     def create_table(current_base, current_pos, current_digit, match_status, nodes_proc):
-        table = Table(title="[bold bright_green]Visualizzazione Albero di Risoluzione[/bold bright_green]", box=None)
-        table.add_column("[bold green]Parametro[/bold green]", style="bright_green")
-        table.add_column("[bold white]Valore[/bold white]", style="white")
-        table.add_row("Base (ottale)", f"[bold bright_white]{current_base:o}".zfill(16))
-        table.add_row("Posizione", f"[bold bright_yellow]{15 - current_pos}[/bold bright_yellow]")
-        table.add_row("Cifra Provata", f"[bold bright_cyan]{current_digit}[/bold bright_cyan]")
+        table = Table(title="[bold bright_green]✨ 2024 Day 17 Solution Tree visualization ✨[/bold bright_green]", box=None)
+        table.add_column("[bold green]Parameter[/bold green]", style="bright_green")
+        table.add_column("[bold white]Value[/bold white]", style="white")
+        table.add_row("Base (octal)", f"[bold bright_white]{current_base:o}".zfill(16))
+        table.add_row("Position", f"[bold bright_yellow]{15 - current_pos}[/bold bright_yellow]")
+        table.add_row("Test Value", f"[bold bright_cyan]{current_digit}[/bold bright_cyan]")
         if match_status == "Match":
-            table.add_row("Stato", "[bold bright_green]Match[/bold bright_green]")
+            table.add_row("Status", "[bold bright_green]✅ Match[/bold bright_green]")
         else:
-            table.add_row("Stato", "[bold bright_red]No Match[/bold bright_red]")
-        table.add_row("Nodi Elaborati", f"[bold bright_magenta]{nodes_proc}[/bold bright_magenta]")
+            table.add_row("Status", "[bold bright_red]❌ No Match[/bold bright_red]")
+        table.add_row("Visited Nodes", f"[bold bright_magenta]{nodes_proc}[/bold bright_magenta]")
         return table
 
     # Definizione dei colori per l'effetto di pulsazione
@@ -170,15 +170,15 @@ def solve_2(test_string = None) -> int:
                 color_index += 1
                 
                 # Introduzione del ritardo per creare l'effetto "video"
-                #time.sleep(0.05)  # Puoi regolare il valore per velocizzare o rallentare
+                time.sleep(0.005)  # Puoi regolare il valore per velocizzare o rallentare
     
     # Dopo la ricerca, visualizza i risultati finali
     if result:
-        console.print(Panel(f"[bold bright_green]Soluzione Trovata: {min(result):o}[/bold bright_green]", style="bright_green on black"))
+        console.print(Panel(f"[bold bright_green]Part 2: {min(result):o}[/bold bright_green]", style="bright_green on black"))
     else:
-        console.print(Panel("[bold bright_red]Nessuna soluzione trovata.[/bold bright_red]", style="bright_red on black"))
+        console.print(Panel("[bold bright_red]No solution found....[/bold bright_red]", style="bright_red on black"))
 
-
+time.sleep(5)
 if __name__ == "__main__":
     test = """Register A: 729
 Register B: 0
