@@ -5,9 +5,11 @@ from dataclasses import dataclass, field
 from icecream import ic
 from queue import PriorityQueue
 from rich.console import Console
-from rich.tree import Tree
-from rich.text import Text
+from rich.live import Live
 from rich.panel import Panel
+from rich.table import Table
+from rich.text import Text
+import time
 import sys
 
 #ic.disable()
@@ -97,12 +99,11 @@ def solve_2(test_string = None) -> int:
         # pos goes from 15 to 0
         #    <------------------
         #    15                0
-        list_oct = list([int(el) for el in f"{base:o}"])
-        new_val = list_oct[pos] + i
+        list_oct = list(f"{base:o}".zfill(16))
+        new_val = int(list_oct[pos]) + i
         new_val = new_val if new_val < 8 else 1
-        list_oct[pos] = new_val
-        f_oct = "".join([str(el) for el in list_oct])
-        int_oct = int(f_oct,8)
+        list_oct[pos] = str(new_val)
+        int_oct = int("".join(list_oct),8)
         return int_oct
     
     def get_pos_es(csv_1: str, csv_2: str, pos):
@@ -114,44 +115,69 @@ def solve_2(test_string = None) -> int:
     q = PriorityQueue()
     q.put([base, pos])
     result = list()
+    nodes_processed = 0  # Contatore per i nodi elaborati
     
-    # Creazione dell'albero per la visualizzazione
-    tree = Tree("[green]Albero di Risoluzione[/green]")
+    # Definizione della struttura di visualizzazione
+    def create_table(current_base, current_pos, current_digit, match_status, nodes_proc):
+        table = Table(title="[bold bright_green]Visualizzazione Albero di Risoluzione[/bold bright_green]", box=None)
+        table.add_column("[bold green]Parametro[/bold green]", style="bright_green")
+        table.add_column("[bold white]Valore[/bold white]", style="white")
+        table.add_row("Base (ottale)", f"[bold bright_white]{current_base:o}".zfill(16))
+        table.add_row("Posizione", f"[bold bright_yellow]{15 - current_pos}[/bold bright_yellow]")
+        table.add_row("Cifra Provata", f"[bold bright_cyan]{current_digit}[/bold bright_cyan]")
+        if match_status == "Match":
+            table.add_row("Stato", "[bold bright_green]Match[/bold bright_green]")
+        else:
+            table.add_row("Stato", "[bold bright_red]No Match[/bold bright_red]")
+        table.add_row("Nodi Elaborati", f"[bold bright_magenta]{nodes_proc}[/bold bright_magenta]")
+        return table
 
-    while not q.empty():
-        base, pos  = q.get()
-        base_oct = f"{base:o}".zfill(16)
-        node = tree
+    # Definizione dei colori per l'effetto di pulsazione
+    border_colors = ["bright_green", "green", "bright_cyan", "cyan", "bright_magenta", "magenta"]
+    color_index = 0  # Indice per i colori del bordo
 
-        # Costruzione del percorso nell'albero
-        current_node = tree
-        for p in range(pos):
-            digit = f"{(base >> (3 * (15 - p))) & 0o7}"
-            current_node = current_node.add(f"[green]Posizione {15 - p}: {digit}[/green]")
-        
-        for i in range(8):
-            new_base = add_i_in_pos(base,i,pos)
-            res, target = solve_1(new_A=new_base)
-            l,r = get_pos_es(res,target,(15-pos))
-            if l == r:
-                branch = current_node.add(f"[green]Pos {15-pos}: {i} -> {oct(new_base)}[/green]")
-                if pos == 15:
-                    result.append(new_base)
-                if pos  <15 :
-                    q.put([new_base, pos+1])
-                    # Aggiungi un simbolo per indicare il progresso
-                    branch.add(f"[yellow]Prossima Posizione: {pos+1}[/yellow]")
-            else:
-                # Ramo non valido
-                current_node.add(f"[red]Pos {15-pos}: {i} -> {oct(new_base)} (No Match)[/red]")
-
-    console.print(Panel(tree, title="[green]Visualizzazione Albero di Risoluzione[/green]", border_style="green"))
-
-    console.print(f"[bold green]Risultati Trovati:[/bold green] {result}")
+    with Live(console=console, screen=True, auto_refresh=False) as live:
+        while not q.empty():
+            current = q.get()
+            base, pos = current
+            for i in range(8):
+                new_base = add_i_in_pos(base, i, pos)
+                res, target = solve_1(new_A=new_base)
+                l, r = get_pos_es(res, target, (15 - pos))
+                
+                nodes_processed += 1  # Incremento del contatore
+                
+                if l == r:
+                    # Aggiornamento dei risultati
+                    if pos == 15:
+                        result.append(new_base)
+                    if pos < 15:
+                        q.put([new_base, pos + 1])
+                    
+                    # Creazione della tabella per la visualizzazione
+                    table = create_table(new_base, pos, i, "Match", nodes_processed)
+                else:
+                    table = create_table(new_base, pos, i, "No Match", nodes_processed)
+                
+                # Aggiornamento del display con effetto di pulsazione
+                border_color = border_colors[color_index % len(border_colors)]
+                border_color_text = f"bold {border_color}"
+                panel = Panel(table, border_style=border_color_text)
+                live.update(panel)
+                live.refresh()
+                
+                # Aggiornamento dell'indice del colore per il prossimo ciclo
+                color_index += 1
+                
+                # Introduzione del ritardo per creare l'effetto "video"
+                #time.sleep(0.05)  # Puoi regolare il valore per velocizzare o rallentare
+    
+    # Dopo la ricerca, visualizza i risultati finali
     if result:
-        console.print(f"[bold green]Soluzione Minima:[/bold green] {min(result)}")
+        console.print(Panel(f"[bold bright_green]Soluzione Trovata: {min(result):o}[/bold bright_green]", style="bright_green on black"))
     else:
-        console.print("[bold red]Nessuna soluzione trovata.[/bold red]")
+        console.print(Panel("[bold bright_red]Nessuna soluzione trovata.[/bold bright_red]", style="bright_red on black"))
+
 
 if __name__ == "__main__":
     test = """Register A: 729
@@ -160,5 +186,9 @@ Register C: 0
 
 Program: 0,1,5,4,3,0
 """
-    console.print(Panel(f"Part 1: {solve_1()[0]}", style="green"))
-    console.print(Panel(f"Part 2: {solve_2()}", style="green"))
+    # Stampa il risultato della Parte 1
+    res1, _ = solve_1()
+    console.print(Panel(f"[bold bright_green]Part 1: {res1}[/bold bright_green]", style="bright_green on black"))
+    
+    # Esegue la Parte 2 con visualizzazione dinamica
+    solve_2()
