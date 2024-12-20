@@ -22,7 +22,7 @@ D = {
 
 def solve_1(test_string: Optional[str] = None, 
             grid: Optional[List[List[str]]] = None,
-            start: Optional[Set[int]] = None) -> Set[Tuple[int, int]]:
+            start: Optional[Set[int]] = None) -> Tuple[List[List[str]], Set[Tuple[int, int]], Optional[Tuple[int, int]]]:
     if not grid:
         inputs_1 = aoc.get_input(CURRENT_DAY, 1) if not test_string else test_string
         grid: List[List[str]] = [list(line) for line in inputs_1.splitlines()]
