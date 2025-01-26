@@ -2,6 +2,7 @@ from pathlib import Path
 import requests 
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
+from aocd import get_data
 
 class AOC:
     def __init__(self, year):
@@ -38,7 +39,6 @@ class AOC:
         if file_path.exists():
             return file_path.read_text()
         else:
-            from aocd import get_data
             data = get_data(day=day, year=self.year)
             file_path.write_text(data)
             return data

@@ -18,3 +18,4 @@ def solve_2(test_string = None) -> int:
 if __name__ == "__main__":
     print(f"Part 1: {solve_1()}")
     print(f"Part 2: {solve_2()}")
+    
